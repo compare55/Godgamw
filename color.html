@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Prediction</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <button class="back-icon" onclick="location.href='index.html'">←</button>
+    <div class="logo">🎨 Color Prediction</div>
+    <div class="nav-wallet">
+      <div class="coin-display">🪙 <span id="navBalance">1000</span></div>
+      <button class="nav-btn" onclick="openWallet()">Wallet</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="color-container">
+      <div class="color-header">
+        <div class="period-info">
+          <span class="period-label">Period</span>
+          <span class="period-number" id="periodNumber">20261011001</span>
+        </div>
+        <div class="timer-display" id="timerDisplay">00:30</div>
+      </div>
+
+      <div class="result-ball" id="resultBall">?</div>
+
+      <div class="color-buttons">
+        <button class="color-btn green" onclick="placeBet('green')">
+          <span class="color-circle"></span><span>Green</span><span class="payout">2x</span>
+        </button>
+        <button class="color-btn red" onclick="placeBet('red')">
+          <span class="color-circle"></span><span>Red</span><span class="payout">2x</span>
+        </button>
+        <button class="color-btn violet" onclick="placeBet('violet')">
+          <span class="color-circle"></span><span>Violet</span><span class="payout">4.5x</span>
+        </button>
+      </div>
+
+      <div class="big-small-buttons">
+        <button class="bs-btn big" onclick="placeBet('big')">
+          <span>BIG</span><span class="bs-range">5 - 9</span><span class="payout">2x</span>
+        </button>
+        <button class="bs-btn small" onclick="placeBet('small')">
+          <span>SMALL</span><span class="bs-range">0 - 4</span><span class="payout">2x</span>
+        </button>
+      </div>
+
+      <div class="number-grid">
+        <div class="grid-title">Bet on Number (9x payout)</div>
+        <div class="numbers">
+          <button class="num-btn" onclick="placeBet('num0')">0</button>
+          <button class="num-btn" onclick="placeBet('num1')">1</button>
+          <button class="num-btn" onclick="placeBet('num2')">2</button>
+          <button class="num-btn" onclick="placeBet('num3')">3</button>
+          <button class="num-btn" onclick="placeBet('num4')">4</button>
+          <button class="num-btn" onclick="placeBet('num5')">5</button>
+          <button class="num-btn" onclick="placeBet('num6')">6</button>
+          <button class="num-btn" onclick="placeBet('num7')">7</button>
+          <button class="num-btn" onclick="placeBet('num8')">8</button>
+          <button class="num-btn" onclick="placeBet('num9')">9</button>
+        </div>
+      </div>
+
+      <div class="color-bet-section">
+        <label>Bet Amount</label>
+        <div class="bet-input-group">
+          <button onclick="adjustBet(-10)">-</button>
+          <input type="number" id="colorBet" value="10" min="10" step="10">
+          <button onclick="adjustBet(10)">+</button>
+        </div>
+        <div class="quick-bets">
+          <button onclick="setBet(10)">10</button>
+          <button onclick="setBet(50)">50</button>
+          <button onclick="setBet(100)">100</button>
+          <button onclick="setBet(500)">500</button>
+        </div>
+      </div>
+
+      <div class="color-history">
+        <h3>Last 10 Results</h3>
+        <div class="history-list" id="colorHistory"></div>
+      </div>
+    </div>
+  </main>
+
+  <div id="walletModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>💰 My Wallet</h2>
+      <div class="wallet-balance">
+        <div class="wb-label">Available Coins</div>
+        <div class="wb-amount">🪙 <span id="walletBalance">1000</span></div>
+      </div>
+      <div class="wallet-actions">
+        <button class="btn-add" onclick="addCoins()">+ Add Coins</button>
+        <button class="btn-withdraw" onclick="withdrawCoins()">↓ Withdraw</button>
+      </div>
+      <div class="wallet-info"><p>⚠️ Virtual coins only. No real money involved.</p></div>
+      <h3 style="margin-top:1.5rem;">Transaction History</h3>
+      <div id="txHistory" class="tx-history"></div>
+      <button class="modal-close" onclick="closeWallet()">Close</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="color.js"></script>
+</body>
+</html>
