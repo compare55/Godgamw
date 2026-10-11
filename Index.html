@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Casino - Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">🎰 Demo Casino</div>
+    <div class="nav-wallet">
+      <button id="soundToggle" class="nav-btn" style="padding:0.5rem 0.8rem;">🔊</button>
+      <div class="coin-display">🪙 <span id="navBalance">1000</span></div>
+      <button class="nav-btn" onclick="openWallet()">Wallet</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <h2 class="page-title">🎮 Choose Your Game</h2>
+    <p class="page-subtitle">Tap any game to play with virtual coins</p>
+
+    <div class="game-grid">
+
+      <a href="slot.html" class="game-card">
+        <div class="game-thumb slot-thumb">🎰</div>
+        <div class="game-name">Slot Machine</div>
+        <div class="game-tag">5x3 Reels · Big Wins</div>
+        <div class="play-badge">PLAY ▶</div>
+      </a>
+
+      <a href="aviator.html" class="game-card">
+        <div class="game-thumb aviator-thumb">✈️</div>
+        <div class="game-name">Aviator</div>
+        <div class="game-tag">Crash · Multiply Wins</div>
+        <div class="play-badge">PLAY ▶</div>
+      </a>
+
+      <a href="color.html" class="game-card">
+        <div class="game-thumb color-thumb">🎨</div>
+        <div class="game-name">Color Prediction</div>
+        <div class="game-tag">WinGo · 9x Payout</div>
+        <div class="play-badge">PLAY ▶</div>
+      </a>
+
+      <a href="dragon-tiger.html" class="game-card">
+        <div class="game-thumb dt-thumb">🐉</div>
+        <div class="game-name">Dragon Tiger</div>
+        <div class="game-tag">Card Battle · 50:1</div>
+        <div class="play-badge">PLAY ▶</div>
+      </a>
+
+      <a href="seven-up-down.html" class="game-card">
+        <div class="game-thumb sud-thumb">🎲</div>
+        <div class="game-name">7Up 7Down</div>
+        <div class="game-tag">Dice · 9x Numbers</div>
+        <div class="play-badge">PLAY ▶</div>
+      </a>
+
+      <a href="pappu.html" class="game-card">
+        <div class="game-thumb pappu-thumb">🦋</div>
+        <div class="game-name">Pappu Play</div>
+        <div class="game-tag">12 Pictures · 10x</div>
+        <div class="play-badge">PLAY ▶</div>
+      </a>
+
+      <a href="e-sabong.html" class="game-card">
+        <div class="game-thumb esabong-thumb">🐓</div>
+        <div class="game-name">Super E-Sabong</div>
+        <div class="game-tag">Cockfight · Dynamic Odds</div>
+        <div class="play-badge">PLAY ▶</div>
+      </a>
+
+      <a href="money-coming.html" class="game-card">
+        <div class="game-thumb mc-thumb">💰</div>
+        <div class="game-name">Money Coming</div>
+        <div class="game-tag">Slot · Multiplier Respins</div>
+        <div class="play-badge">PLAY ▶</div>
+      </a>
+
+    </div>
+  </main>
+
+  <div id="walletModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>💰 My Wallet</h2>
+      <div class="wallet-balance">
+        <div class="wb-label">Available Coins</div>
+        <div class="wb-amount">🪙 <span id="walletBalance">1000</span></div>
+      </div>
+      <div class="wallet-actions">
+        <button class="btn-add" onclick="addCoins()">+ Add Coins</button>
+        <button class="btn-withdraw" onclick="withdrawCoins()">↓ Withdraw</button>
+      </div>
+      <div class="wallet-info">
+        <p>⚠️ Virtual coins only. No real money involved.</p>
+        <p style="font-size:0.85rem;color:#888;">Daily bonus: 500 coins</p>
+      </div>
+      <h3 style="margin-top:1.5rem;">Transaction History</h3>
+      <div id="txHistory" class="tx-history"></div>
+      <button class="modal-close" onclick="closeWallet()">Close</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
